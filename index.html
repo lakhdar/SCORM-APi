@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scorm04Exception.js"></script>
+    <script src="logger.js"></script>
+
+    <script src="dataService.js"></script>
+    <script src="cmiDataModel/cmiBaseType.js"></script>
+    <script src="cmiDataModel/cmiDecimal.js"></script>
+    <script src="cmiDataModel/cmiFeedback.js"></script>
+    <script src="cmiDataModel/cmiInteger.js"></script>
+    <script src="cmiDataModel/cmiLanguage.js"></script>
+    <script src="cmiDataModel/cmiLocaleString.js"></script>
+    <script src="cmiDataModel/cmiLongIdentifier.js"></script>
+    <script src="cmiDataModel/cmiString.js"></script>
+    <script src="cmiDataModel/cmiTimestamp.js"></script>
+    <script src="cmiDataModel/cmiVocabulary.js"></script>
+    <script src="cmiDataModel/cmiArray.js"></script>
+    <script src="cmiDataModel/cmiGroup.js"></script>
+    <script src="cmiDataModel/cmi04.js"></script>
+    <script src="scormApi.js"></script>
+</head>
+<body>
+    <script>
+        console.log(new cmiGroup(cmi04));
+        var api = new scormApi({
+            cmi: new cmiGroup(cmi04)
+        });
+        var int = api.Initialize("");
+        var obj = api._setInitialData();
+        var  set = api.GetValue("cmi.completion_status");
+
+        console.log(obj);
+
+    </script>
+
+</body>
+</html>
